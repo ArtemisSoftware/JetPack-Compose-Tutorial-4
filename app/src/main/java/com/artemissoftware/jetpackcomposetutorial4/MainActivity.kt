@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.InstagramProfileScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.MeditationScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
 
@@ -19,9 +20,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetPackComposeTutorial4Theme {
 
-                MeditationScreen()
+                InstagramProfileScreen()
             }
         }
     }
 }
 
+
+@ExperimentalFoundationApi
+@Preview(showBackground = true)
+@Composable
+private fun DefaultPreview() {
+    MeditationScreen()
+}
