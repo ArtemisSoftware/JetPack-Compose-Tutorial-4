@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.Greeting
+import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables.ChipSection
 import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables.GreetingSection
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.DeepBlue
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
@@ -45,7 +46,11 @@ fun HomeScreen() {
             .fillMaxSize()
     ) {
 
-        GreetingSection()
+        Column {
+            GreetingSection()
+            ChipSection(chips = listOf("Sweet sleep", "Insomnia", "Depression"))
+        }
+
     }
 }
 
