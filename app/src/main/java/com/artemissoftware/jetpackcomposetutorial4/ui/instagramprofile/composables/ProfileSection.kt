@@ -43,7 +43,7 @@ fun ProfileSection(
         }
         ProfileDescription(
             displayName = "Ancient Greek deity",
-            description = "Artemis was one of the most widely venerated of the Ancient Greek deities, and her temple at Ephesus was one of the Seven Wonders of the Ancient World. Artemis' symbols included a bow and arrow, a quiver, and hunting knives, and the deer and the cypress were sacred to her",
+            description = "Artemis' symbols included a bow and arrow, a quiver, and hunting knives, and the deer and the cypress were sacred to her",
             url = "https://en.wikipedia.org/wiki/Artemis",
             followedBy = listOf("Aphrodite", "Diana"),
             otherCount = 17

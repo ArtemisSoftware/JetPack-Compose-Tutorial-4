@@ -34,6 +34,30 @@ data class ImageWithText(
 
         }
 
+
+        fun getMock_2(): List<ImageWithText>{
+
+            return listOf(
+
+                ImageWithText(
+                    image = R.drawable.ic_grid,
+                    text = "Posts"
+                ),
+                ImageWithText(
+                    image = R.drawable.ic_reels,
+                    text = "Reels"
+                ),
+                ImageWithText(
+                    image = R.drawable.ic_igtv,
+                    text = "IGTV"
+                ),
+                ImageWithText(
+                    image = R.drawable.ic_self_improvement,
+                    text = "Profile"
+                )
+            )
+        }
+
     }
 
 

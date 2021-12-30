@@ -2,18 +2,23 @@ package com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composables.ButtonSection
-import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composables.HighlightSection
-import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composables.ProfileSection
-import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composables.TopBar
+import com.artemissoftware.jetpackcomposetutorial4.R
+import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composables.*
 import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.models.ImageWithText
 
+@ExperimentalFoundationApi
 @Composable
 fun InstagramProfileScreen(){
+
+    var selectedTabIndex by remember {
+        mutableStateOf(0)
+    }
+
 
     Column(modifier = Modifier.fillMaxSize()) {
 
@@ -36,6 +41,29 @@ fun InstagramProfileScreen(){
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
         )
+
+
+        Spacer(modifier = Modifier.height(10.dp))
+        PostTabView(
+            imageWithTexts = ImageWithText.getMock_2()
+        ) {
+            selectedTabIndex = it
+        }
+
+
+        when(selectedTabIndex) {
+            0 -> PostSection(
+                posts = listOf(
+                    painterResource(id = R.drawable.artemis_3),
+                    painterResource(id = R.drawable.artemis_3),
+                    painterResource(id = R.drawable.artemis_3),
+                    painterResource(id = R.drawable.artemis_3),
+                    painterResource(id = R.drawable.artemis_3),
+                    painterResource(id = R.drawable.artemis_3),
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
 
     }
 
