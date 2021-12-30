@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables
+package com.artemissoftware.jetpackcomposetutorial4.ui.meditation.composables
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.R
-import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.models.Feature
+import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.models.Feature
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
 import com.artemissoftware.jetpackcomposetutorial4.util.standardQuadFromTo
 

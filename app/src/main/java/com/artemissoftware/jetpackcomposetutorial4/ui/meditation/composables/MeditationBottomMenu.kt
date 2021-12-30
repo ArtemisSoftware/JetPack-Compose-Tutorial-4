@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables
+package com.artemissoftware.jetpackcomposetutorial4.ui.meditation.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.models.BottomMenuContent
+import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.models.BottomMenuContent
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.AquaBlue
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.ButtonBlue
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.DeepBlue

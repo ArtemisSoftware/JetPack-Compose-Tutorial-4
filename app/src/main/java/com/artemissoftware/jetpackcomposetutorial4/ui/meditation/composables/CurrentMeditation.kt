@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables
+package com.artemissoftware.jetpackcomposetutorial4.ui.meditation.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation
+package com.artemissoftware.jetpackcomposetutorial4.ui.meditation
 
 
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -8,9 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.composables.*
-import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.models.BottomMenuContent
-import com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.models.Feature
+import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.composables.*
+import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.models.BottomMenuContent
+import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.models.Feature
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.DeepBlue
 
 @ExperimentalFoundationApi

@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.jetmeditation.models
+package com.artemissoftware.jetpackcomposetutorial4.ui.meditation.models
 
 import androidx.annotation.DrawableRes
 import androidx.compose.ui.graphics.Color
