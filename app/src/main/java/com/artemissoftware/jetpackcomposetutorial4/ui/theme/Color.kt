@@ -29,3 +29,5 @@ val BlueViolet3 = Color(0xff8f98fd)
 
 val purplish = Color(0xff4e3d77)
 val orangish = Color(0xffffac00)
+
+val Orange = Color(0xFFF2994A)

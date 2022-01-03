@@ -6,6 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.artemissoftware.jetpackcomposetutorial4.ui.cleaning.CleaningLoginScreen
+import com.artemissoftware.jetpackcomposetutorial4.ui.cleaning.CleaningOnBoardingScreen
+import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.GroceryShopScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.jetnavigation.Navigation
 import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.MeditationScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
@@ -17,9 +20,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetPackComposeTutorial4Theme {
 
-                Navigation()
                 //MeditationScreen()
                 //InstagramProfileScreen()
+                //Navigation()
+                //CleaningLoginScreen()
+                //Cleaning()
+                GroceryShopScreen()
             }
         }
     }
@@ -30,5 +36,5 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    MeditationScreen()
+    GroceryShopScreen()
 }
