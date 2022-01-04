@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.R
 import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.Header
+import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.Promotions
 
 @Composable
 fun GroceryShopScreen() {
@@ -47,9 +48,9 @@ fun GroceryShopScreen() {
 
                 Column() {
                     Header()
-//                    Spacer(modifier = Modifier.height(16.dp))
-//                    Promotions()
-//                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Promotions()
+                    Spacer(modifier = Modifier.height(16.dp))
 //                    CategorySection()
 //                    Spacer(modifier = Modifier.height(16.dp))
 //                    BestSellerSection()
