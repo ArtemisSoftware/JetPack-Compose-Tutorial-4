@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.R
+import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.BestSellerSection
 import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.CategorySection
 import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.Header
 import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.composables.Promotions
@@ -54,7 +55,7 @@ fun GroceryShopScreen() {
                     Spacer(modifier = Modifier.height(16.dp))
                     CategorySection()
                     Spacer(modifier = Modifier.height(16.dp))
-//                    BestSellerSection()
+                    BestSellerSection()
                 }
             }
         }
