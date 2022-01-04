@@ -47,7 +47,7 @@ fun Promotions() {
 }
 
 @Composable
-fun PromotionItem(
+private fun PromotionItem(
     title: String = "",
     subtitle: String = "",
     header: String = "",
