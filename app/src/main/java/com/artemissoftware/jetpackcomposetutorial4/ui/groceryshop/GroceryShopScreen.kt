@@ -31,9 +31,10 @@ fun GroceryShopScreen() {
     Surface(color = MaterialTheme.colors.background) {
 
 
-        Box(/*
+        Box(
             modifier = Modifier
-                .verticalScroll(rememberScrollState())*/) {
+                .verticalScroll(rememberScrollState())
+        ) {
             Image(
                 modifier = Modifier
                     .fillMaxWidth()
