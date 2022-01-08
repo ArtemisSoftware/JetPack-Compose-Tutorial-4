@@ -1,32 +1,16 @@
 package com.artemissoftware.jetpackcomposetutorial4.ui.library
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ChevronRight
-import androidx.compose.material.icons.filled.MoreVert
-import androidx.compose.material.icons.filled.QrCode
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.composables.BookShelfSection
+import com.artemissoftware.jetpackcomposetutorial4.ui.library.composables.LibraryMemberBar
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.composables.NewArrivalsSection
 
 @ExperimentalMaterialApi
@@ -36,13 +20,14 @@ fun LibraryScreen() {
     Surface(color = MaterialTheme.colors.background) {
 
         val sheetState = rememberBottomSheetScaffoldState()
+        var peekHeightPx by remember { mutableStateOf(0) }
 
         BottomSheetScaffold(
             scaffoldState = sheetState,
-            sheetPeekHeight = 260.dp,
+            sheetPeekHeight = GetSheetPeekHeight(peekHeightPx),
             sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 12.dp),
             topBar = {
-
+                LibraryMemberBar()
             },
             sheetContent = {
 
@@ -54,8 +39,23 @@ fun LibraryScreen() {
 
             NewArrivalsSection(paddingValues = paddingValues)
         }
+
+
+
     }
 
+}
+
+
+
+@Composable
+private fun GetSheetPeekHeight(peekHeightPx: Int): Dp {
+    return if (peekHeightPx == 0) {
+        BottomSheetScaffoldDefaults.SheetPeekHeight
+    } else {
+        // The value from onGloballyPositioned is in px and needs to be converted back to a dp value, and 8 needs to be added for the padding and 8 for the spacing between
+        (with(LocalDensity.current) { peekHeightPx / density } + 16).dp
+    }
 }
 
 @ExperimentalMaterialApi
