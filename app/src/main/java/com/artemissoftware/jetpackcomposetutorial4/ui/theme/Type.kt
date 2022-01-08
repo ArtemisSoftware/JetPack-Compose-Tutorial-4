@@ -68,3 +68,18 @@ val nunitoFamily = FontFamily(
 val GroceryTypography = Typography(
     defaultFontFamily = nunitoFamily
 )
+
+
+val PoppinsFamily = FontFamily(
+    Font(R.font.poppins_regular),
+    Font(R.font.poppins_semibold, FontWeight.SemiBold),
+)
+
+val NewYorkFamily = FontFamily(
+    Font(R.font.newyork)
+)
+
+val LibraryTypography = Typography(
+    defaultFontFamily = PoppinsFamily
+)
+

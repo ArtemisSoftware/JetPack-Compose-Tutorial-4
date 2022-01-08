@@ -10,6 +10,7 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.cleaning.CleaningLoginScre
 import com.artemissoftware.jetpackcomposetutorial4.ui.cleaning.CleaningOnBoardingScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.groceryshop.GroceryShopScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.jetnavigation.Navigation
+import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.MeditationScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
 
@@ -25,7 +26,8 @@ class MainActivity : ComponentActivity() {
                 //Navigation()
                 //CleaningLoginScreen()
                 //Cleaning()
-                GroceryShopScreen()
+                //GroceryShopScreen()
+                LibraryScreen()
             }
         }
     }
@@ -36,5 +38,5 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    GroceryShopScreen()
+    LibraryScreen()
 }
