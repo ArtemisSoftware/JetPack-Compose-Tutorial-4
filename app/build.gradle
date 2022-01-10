@@ -67,4 +67,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.4.0-beta02")
 
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+    // Image Loading Library
+    implementation "com.google.accompanist:accompanist-coil:0.12.0"
 }

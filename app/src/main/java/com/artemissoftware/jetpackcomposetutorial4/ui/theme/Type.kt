@@ -83,3 +83,15 @@ val LibraryTypography = Typography(
     defaultFontFamily = PoppinsFamily
 )
 
+
+
+val TripFontFamily = FontFamily(
+    Font(R.font.overpass_black, FontWeight.Black),
+    Font(R.font.overpass_bold, FontWeight.Bold),
+    Font(R.font.overpass_extra_bold, FontWeight.ExtraBold),
+    Font(R.font.overpass_extra_light, FontWeight.ExtraLight),
+    Font(R.font.overpass_light, FontWeight.Light),
+    Font(R.font.overpass_regular, FontWeight.Normal),
+    Font(R.font.overpass_semi_bold, FontWeight.SemiBold),
+    Font(R.font.overpass_thin, FontWeight.Thin),
+)
