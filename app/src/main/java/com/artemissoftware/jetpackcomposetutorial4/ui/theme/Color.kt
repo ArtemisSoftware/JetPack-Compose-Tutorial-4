@@ -33,3 +33,5 @@ val orangish = Color(0xffffac00)
 val Orange = Color(0xFFF2994A)
 
 val BrandColor = Color(0xffF6C12D)
+
+val BlueColor = Color(0xFF3562D7)
