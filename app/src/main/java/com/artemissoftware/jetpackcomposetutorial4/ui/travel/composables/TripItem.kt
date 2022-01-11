@@ -76,7 +76,7 @@ fun TripItem(
 //                    //--navController.navigate("detail")
 //                }
                 .height(200.dp)
-//                .fillMaxWidth()
+                .fillMaxWidth()
         )
 
         Spacer(modifier = Modifier.height(8.dp))

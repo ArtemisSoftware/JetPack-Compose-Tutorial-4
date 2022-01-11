@@ -14,6 +14,7 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.jetnavigation.Navigation
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.MeditationScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.TravelHomeScreen
 
 class MainActivity : ComponentActivity() {
     @ExperimentalMaterialApi
@@ -29,7 +30,8 @@ class MainActivity : ComponentActivity() {
                 //CleaningLoginScreen()
                 //Cleaning()
                 //GroceryShopScreen()
-                LibraryScreen()
+                //LibraryScreen()
+                TravelHomeScreen()
             }
         }
     }
@@ -41,5 +43,5 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    LibraryScreen()
+    //LibraryScreen()
 }

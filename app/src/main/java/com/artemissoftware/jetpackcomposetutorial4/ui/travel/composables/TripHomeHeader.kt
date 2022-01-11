@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
@@ -42,13 +43,77 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.composabl
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.models.Book
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Trip
+import com.artemissoftware.jetpackcomposetutorial4.util.TripConstants.TRIP_HEADER_BACKGROUND_IMAGE_URL
 import com.google.accompanist.coil.rememberCoilPainter
+import com.google.accompanist.insets.statusBarsPadding
 
 
 @Composable
 @Preview
 fun HomeHeader() {
 
+    Box {
+
+
+        Image(
+            painter = rememberCoilPainter(
+                request = TRIP_HEADER_BACKGROUND_IMAGE_URL,
+                fadeIn = true,
+                previewPlaceholder = R.drawable.ancient_greece
+            ),
+            contentDescription = "",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                    .height(260.dp)
+                    .alpha(0.2f)
+                    .fillMaxWidth()
+        )
+
+
+
+        Column(
+            modifier = Modifier
+                .align(Alignment.Center)
+                .statusBarsPadding()
+                .padding(16.dp)
+        ) {
+
+            Text(
+                text = "Good Morning",
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 38.sp,
+                letterSpacing = (-1).sp
+            )
+
+
+            Text(
+                text = "What do you want to book today ?",
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.Light,
+                fontSize = 18.sp,
+                lineHeight = 24.sp,
+                letterSpacing = ((-0.2).sp)
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+
+
+                VerticalButton(vector = Icons.Filled.AirplanemodeActive, text = "Flights")
+                VerticalButton(vector = Icons.Filled.DirectionsCar, text = "Cars")
+                VerticalButton(vector = Icons.Filled.Business, text = "Hotel")
+                VerticalButton(vector = Icons.Filled.LocalShipping, text = "Cruise")
+
+            }
+
+
+        }
+    }
 
 }
 
