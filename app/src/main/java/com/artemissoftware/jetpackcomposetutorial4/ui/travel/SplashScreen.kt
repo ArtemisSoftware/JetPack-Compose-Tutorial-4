@@ -63,6 +63,48 @@ fun SplashScreen(
             //modifier = Modifier.fillMaxSize()
         )
 
+        Column(){
+
+            Text(
+                text = "Explore\nNew Places",
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 32.sp,
+                letterSpacing = (-1).sp
+            )
+
+            Text(
+                text = "Exploria will help you to find new hotels, book cheap flights and lot more.",
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.Light,
+                fontSize = 18.sp,
+                lineHeight = 24.sp,
+                letterSpacing = (-0.1).sp
+            )
+
+            Button(
+                onClick = {
+                    //--navController.navigate("home")
+                },
+                modifier = Modifier
+                    .padding(8.dp, 24.dp)
+                    .fillMaxWidth()
+            ) {
+
+                Text(text = "Get Started")
+
+                Spacer(modifier = Modifier.width(8.dp))
+
+                Icon(
+                    imageVector = Icons.Default.ArrowForward,
+                    contentDescription = ""
+                )
+
+            }
+
+        }
+
+
 
     }
 }
