@@ -43,12 +43,30 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Trip
 import com.google.accompanist.coil.rememberCoilPainter
 import com.google.accompanist.insets.statusBarsPadding
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.HomeHeader
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.ScheduleResume
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.TripItem
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Destination
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Schedule
 import com.google.accompanist.insets.navigationBarsPadding
 
 @Composable
 fun TripDetailScreen(){
+
+    val destination = Destination.getMock()
+
+    LazyColumn() {
+
+        item {
+            //--DetailHeader(navController)
+            ScheduleResume(destination = destination)
+        }
+
+//        itemsIndexed(tripDays) { position, data ->
+//            TripDayContent(data)
+//        }
+
+    }
+
 
 }
 

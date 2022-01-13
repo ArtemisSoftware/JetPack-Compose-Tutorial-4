@@ -45,28 +45,57 @@ import com.google.accompanist.coil.rememberCoilPainter
 import com.google.accompanist.insets.statusBarsPadding
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.HomeHeader
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.TripItem
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Destination
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Schedule
 import com.google.accompanist.insets.navigationBarsPadding
 
 
 @Composable
-fun ScheduleResume(){
+fun ScheduleResume(destination: Destination){
+
+    Column() {
+
+        DestinationRating(destination = destination)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = destination.title,
+            fontFamily = TripFontFamily,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 22.sp,
+            lineHeight = 28.sp,
+            letterSpacing = (-0.2).sp
+        )
+
+
+        Divider(
+            color = Color(0xFFECECEE),
+            modifier = Modifier.padding(8.dp)
+        )
+
+    }
 
 }
 
-@Preview
 @Composable
-private fun CountryAndRating(){
+private fun DestinationRating(destination: Destination){
 
     Row {
 
-        LocationChip(text = "Greece")
-        
+        LocationChip(text = destination.location)
+
+        Spacer(modifier = Modifier.weight(1f))
+
         Icon(
             imageVector = Icons.Default.Star,
-            contentDescription = ""
+            contentDescription = "",
+            modifier = Modifier
+                .padding(end = 8.dp)
+                .size(12.dp)
+                .align(CenterVertically),
+            tint = Color(0xFFFBC110)
         )
-
 
         Text(
             text = "4.8 (2.5k reviews)",
@@ -83,8 +112,13 @@ private fun CountryAndRating(){
 
 @Preview
 @Composable
+private fun DestinationRatingPreview() {
+    DestinationRating(Destination.getMock())
+}
+
+
+@Preview
+@Composable
 private fun ScheduleResumePreview() {
-
-    ScheduleResume()
-
+    ScheduleResume(Destination.getMock())
 }
