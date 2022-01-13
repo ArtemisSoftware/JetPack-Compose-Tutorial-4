@@ -59,7 +59,7 @@ fun HomeHeader() {
             painter = rememberCoilPainter(
                 request = TRIP_HEADER_BACKGROUND_IMAGE_URL,
                 fadeIn = true,
-                previewPlaceholder = R.drawable.ancient_greece
+                previewPlaceholder = R.drawable.placeholder
             ),
             contentDescription = "",
             contentScale = ContentScale.Crop,
