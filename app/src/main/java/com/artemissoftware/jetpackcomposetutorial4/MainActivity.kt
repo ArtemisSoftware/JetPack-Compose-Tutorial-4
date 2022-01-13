@@ -14,6 +14,7 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.jetnavigation.Navigation
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.meditation.MeditationScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.SplashScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.TravelHomeScreen
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +32,8 @@ class MainActivity : ComponentActivity() {
                 //Cleaning()
                 //GroceryShopScreen()
                 //LibraryScreen()
-                TravelHomeScreen()
+                //TravelHomeScreen()
+                SplashScreen()
             }
         }
     }

@@ -51,63 +51,87 @@ import com.google.accompanist.insets.navigationBarsPadding
 fun SplashScreen(
     //navController: NavController
 ) {
-    Box(){
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ){
 
         Image(
             painter = rememberCoilPainter(
                 request = TRIP_SPLASH_IMAGE_URL,
-                previewPlaceholder = R.drawable.ancient_greece
+                previewPlaceholder = R.drawable.placeholder
             ),
             contentDescription = "",
-            //contentScale = ContentScale.Crop,
-            //modifier = Modifier.fillMaxSize()
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
         )
 
-        Column(){
+        Onboarding(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .navigationBarsPadding()
+                .padding(all = 16.dp)
+        )
+    }
+}
 
-            Text(
-                text = "Explore\nNew Places",
-                fontFamily = TripFontFamily,
-                fontWeight = FontWeight.Bold,
-                fontSize = 32.sp,
-                letterSpacing = (-1).sp
+
+@Preview
+@Composable
+private fun Onboarding(
+    modifier: Modifier = Modifier
+){
+
+    Column(
+        modifier = modifier
+            .background(
+                shape = RoundedCornerShape(16.dp),
+                color = Color.White
             )
+            .padding(16.dp)
+    ){
 
-            Text(
-                text = "Exploria will help you to find new hotels, book cheap flights and lot more.",
-                fontFamily = TripFontFamily,
-                fontWeight = FontWeight.Light,
-                fontSize = 18.sp,
-                lineHeight = 24.sp,
-                letterSpacing = (-0.1).sp
+        Text(
+            text = "Explore\nNew Places",
+            fontFamily = TripFontFamily,
+            fontWeight = FontWeight.Bold,
+            fontSize = 32.sp,
+            letterSpacing = (-1).sp
+        )
+
+        Text(
+            text = "Exploria will help you to find new hotels, book cheap flights and lot more.",
+            fontFamily = TripFontFamily,
+            fontWeight = FontWeight.Light,
+            fontSize = 18.sp,
+            lineHeight = 24.sp,
+            letterSpacing = (-0.1).sp
+        )
+
+        Button(
+            onClick = {
+                //--navController.navigate("home")
+            },
+            modifier = Modifier
+                .padding(bottom = 8.dp, top = 24.dp)
+                .fillMaxWidth()
+        ) {
+
+            Text(text = "Get Started")
+
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Icon(
+                imageVector = Icons.Default.ArrowForward,
+                contentDescription = ""
             )
-
-            Button(
-                onClick = {
-                    //--navController.navigate("home")
-                },
-                modifier = Modifier
-                    .padding(8.dp, 24.dp)
-                    .fillMaxWidth()
-            ) {
-
-                Text(text = "Get Started")
-
-                Spacer(modifier = Modifier.width(8.dp))
-
-                Icon(
-                    imageVector = Icons.Default.ArrowForward,
-                    contentDescription = ""
-                )
-
-            }
 
         }
 
-
-
     }
 }
+
+
 
 @Preview
 @Composable
