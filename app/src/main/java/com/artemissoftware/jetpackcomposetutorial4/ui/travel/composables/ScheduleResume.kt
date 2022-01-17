@@ -74,6 +74,33 @@ fun ScheduleResume(destination: Destination){
             modifier = Modifier.padding(8.dp)
         )
 
+
+        Row(
+            //horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+
+            ScheduleNote(
+                imageVector = Icons.Default.CalendarToday,
+                title = "Duration",
+                subtitle = "7 days"
+            )
+
+            ScheduleNote(
+                imageVector = Icons.Default.Person,
+                title = "Package For",
+                subtitle = "2 Person"
+            )
+
+            ScheduleNote(
+                imageVector = Icons.Default.AttachMoney,
+                title = "Apprx Cost",
+                subtitle = "800"
+            )
+
+        }
+
+
+
     }
 
 }
@@ -110,10 +137,63 @@ private fun DestinationRating(destination: Destination){
 }
 
 
+@Composable
+private fun ScheduleNote(
+    imageVector: ImageVector,
+    title: String,
+    subtitle: String
+){
+
+    Row {
+
+        Icon(
+            modifier = Modifier
+                .padding(8.dp)
+                .clip(CircleShape)
+                .background(Color(0xFFF5F6FF))
+                .size(32.dp)
+                .padding(8.dp),
+            imageVector = imageVector, contentDescription = ""
+        )
+
+        Column {
+
+            Text(
+                text = title,
+                fontSize = 12.sp,
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.ExtraBold
+            )
+
+            Text(
+                text = subtitle,
+                fontSize = 14.sp,
+                fontFamily = TripFontFamily,
+                fontWeight = FontWeight.Normal
+            )
+        }
+
+    }
+
+
+
+}
+
+
 @Preview
 @Composable
 private fun DestinationRatingPreview() {
     DestinationRating(Destination.getMock())
+}
+
+@Preview
+@Composable
+private fun ScheduleNotePreview() {
+    ScheduleNote(
+        imageVector = Icons.Default.AttachMoney,
+        title = "Apprx Cost",
+        subtitle = "800"
+    )
 }
 
 
