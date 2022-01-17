@@ -61,15 +61,45 @@ fun TripDetailScreen(){
             ScheduleResume(destination = destination)
         }
 
-//        itemsIndexed(tripDays) { position, data ->
-//            TripDayContent(data)
-//        }
+        itemsIndexed(Schedule.getMockList()) { position, data ->
+            ScheduleContent(data)
+        }
 
     }
 
 
 }
 
+
+
+@Composable
+fun ScheduleContent(schedule: Schedule) {
+
+    Column(
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+    ) {
+
+        Text(
+            text = schedule.title.uppercase(),
+            fontSize = 14.sp,
+            fontFamily = TripFontFamily,
+            fontWeight = FontWeight.ExtraBold,
+            letterSpacing = 0.75.sp
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(
+            text = schedule.detail,
+            fontSize = 14.sp,
+            fontFamily = TripFontFamily,
+            fontWeight = FontWeight.Light,
+            lineHeight = 18.sp
+        )
+
+    }
+
+}
 
 
 

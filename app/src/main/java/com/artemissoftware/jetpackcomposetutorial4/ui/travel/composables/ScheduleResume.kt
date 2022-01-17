@@ -99,7 +99,10 @@ fun ScheduleResume(destination: Destination){
 
         }
 
-
+        Divider(
+            color = Color(0xFFECECEE),
+            modifier = Modifier.padding(8.dp)
+        )
 
     }
 
