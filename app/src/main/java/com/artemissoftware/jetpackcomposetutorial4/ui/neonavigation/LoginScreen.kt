@@ -1,5 +1,7 @@
 package com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,6 +17,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import java.time.LocalDateTime
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Destination(start = true)
 @Composable
 fun LoginScreen(
