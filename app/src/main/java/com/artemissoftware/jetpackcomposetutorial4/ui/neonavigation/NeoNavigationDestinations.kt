@@ -16,60 +16,70 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.ramcosta.composedestinations.DestinationsNavHost
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NeoNavigationDestinations() {
 
-    val navController = rememberNavController()
-
-    NavHost(
-        navController = navController,
-        startDestination = "login"
-    ) {
-
-        composable("login") {
-            LoginScreen(navController)
-        }
-
-        composable(
-            route = "profile/{name}/{userId}/{timestamp}",
-            arguments = listOf(
-                navArgument("name") {
-                    type = NavType.StringType
-                },
-                navArgument("userId") {
-                    type = NavType.StringType
-                },
-                navArgument("timestamp") {
-                    type = NavType.LongType
-                },
-            )
-        ) {
-            val name = it.arguments?.getString("name")!!
-            val userId = it.arguments?.getString("userId")!!
-            val timestamp = it.arguments?.getLong("timestamp")!!
-
-            ProfileScreen(
-                navController = navController,
-                name = name,
-                userId = userId,
-                created = timestamp
-            )
-        }
+    DestinationsNavHost(navGraph = NavGraphs.root)
+}
 
 
-        composable("post/{showOnlyPostsByUser}", arguments = listOf(
-            navArgument("showOnlyPostsByUser") {
-                type = NavType.BoolType
-                defaultValue = false
-            }
-        )) {
-            val showOnlyPostsByUser =
-                it.arguments?.getBoolean("showOnlyPostsByUser") ?: false
-            PostScreen(showOnlyPostsByUser)
-        }
-    }
+@RequiresApi(Build.VERSION_CODES.O)
+@Composable
+fun NeoNavigation_OldDestinations() {
+
+//    val navController = rememberNavController()
+//
+//    NavHost(
+//        navController = navController,
+//        startDestination = "login"
+//    ) {
+//
+//        composable("login") {
+//            LoginScreen(navController)
+//        }
+//
+//        composable(
+//            route = "profile/{name}/{userId}/{timestamp}",
+//            arguments = listOf(
+//                navArgument("name") {
+//                    type = NavType.StringType
+//                },
+//                navArgument("userId") {
+//                    type = NavType.StringType
+//                },
+//                navArgument("timestamp") {
+//                    type = NavType.LongType
+//                },
+//            )
+//        ) {
+//            val name = it.arguments?.getString("name")!!
+//            val userId = it.arguments?.getString("userId")!!
+//            val timestamp = it.arguments?.getLong("timestamp")!!
+//
+//            ProfileScreen(
+//                navController = navController,
+//                name = name,
+//                userId = userId,
+//                created = timestamp
+//            )
+//        }
+//
+//
+//        composable("post/{showOnlyPostsByUser}", arguments = listOf(
+//            navArgument("showOnlyPostsByUser") {
+//                type = NavType.BoolType
+//                defaultValue = false
+//            }
+//        )) {
+//            val showOnlyPostsByUser =
+//                it.arguments?.getBoolean("showOnlyPostsByUser") ?: false
+//            PostScreen(showOnlyPostsByUser)
+//        }
+//    }
 
 }
+
 

@@ -13,29 +13,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
+import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.destinations.PostScreenDestination
 import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.models.User
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
 
-
+@Destination
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun ProfileScreen(
-    navController: NavController,
-    name: String,
-    userId: String,
-    created: Long
+    navigator: DestinationsNavigator,
+    user: User
 ) {
-    val user = remember {
-        User(
-            name = name,
-            id = userId,
-            created = LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(created), ZoneId.systemDefault()
-            )
-        )
-    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -43,7 +36,8 @@ fun ProfileScreen(
     ) {
         Text("Profile Screen: $user", textAlign = TextAlign.Center)
         Button(onClick = {
-            navController.navigate("post/true")
+            navigator.navigate(PostScreenDestination())
+            //navController.navigate("post/true")
         }) {
             Text("Go to Post Screen")
         }

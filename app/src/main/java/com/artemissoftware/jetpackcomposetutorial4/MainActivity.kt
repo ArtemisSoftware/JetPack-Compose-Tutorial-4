@@ -13,9 +13,10 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.NeoNavigatio
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
 
 class MainActivity : ComponentActivity() {
+
     @RequiresApi(Build.VERSION_CODES.O)
-    @ExperimentalMaterialApi
-    @ExperimentalFoundationApi
+//    @ExperimentalMaterialApi
+//    @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

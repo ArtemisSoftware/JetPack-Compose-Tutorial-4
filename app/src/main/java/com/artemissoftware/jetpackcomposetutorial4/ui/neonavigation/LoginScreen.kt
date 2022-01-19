@@ -9,10 +9,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.destinations.ProfileScreenDestination
+import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.models.User
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import java.time.LocalDateTime
 
+@Destination(start = true)
 @Composable
 fun LoginScreen(
-    navController: NavController
+    navigator: DestinationsNavigator
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -21,7 +27,14 @@ fun LoginScreen(
     ) {
         Text("Login Screen")
         Button(onClick = {
-            navController.navigate("profile/philipp/userid/123456789")
+            navigator.navigate(ProfileScreenDestination(
+                User(
+                    name = "Artemis",
+                    id = "userid",
+                    created = LocalDateTime.now()
+                )
+            ))
+            //navController.navigate("profile/philipp/userid/123456789")
         }) {
             Text("Go to Profile Screen")
         }
