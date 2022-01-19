@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                 //LibraryScreen()
                 //TravelHomeScreen()
                 //SplashScreen()
-                TripDetailScreen()
+                //TripDetailScreen()
             }
         }
     }
