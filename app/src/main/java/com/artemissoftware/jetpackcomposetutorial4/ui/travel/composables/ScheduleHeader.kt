@@ -1,4 +1,5 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.travel
+package com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables
+
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -39,7 +40,7 @@ import com.artemissoftware.jetpackcomposetutorial4.R
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.models.Book
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.models.Shelf
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
-import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.DetailHeader
+import com.artemissoftware.jetpackcomposetutorial4.ui.travel.TripDetailScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Trip
 import com.google.accompanist.coil.rememberCoilPainter
 import com.google.accompanist.insets.statusBarsPadding
@@ -48,68 +49,103 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.Schedul
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.composables.TripItem
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Destination
 import com.artemissoftware.jetpackcomposetutorial4.ui.travel.models.Schedule
+import com.artemissoftware.jetpackcomposetutorial4.util.TripConstants.TRIP_HEADER_IMAGE_URL
 import com.google.accompanist.insets.navigationBarsPadding
 
+
+
 @Composable
-fun TripDetailScreen(){
+fun DetailHeader(
+    //--navController: NavController
+) {
 
-    val destination = Destination.getMock()
+    Box() {
 
-    LazyColumn() {
+        Image(
+            painter = rememberCoilPainter(
+                request = TRIP_HEADER_IMAGE_URL,
+                previewPlaceholder = R.drawable.placeholder
+            ),
+            contentDescription = "",
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(300.dp)
+        )
 
-        item {
-            DetailHeader(/*navController*/)
-            ScheduleResume(destination = destination)
+
+        Box(
+            modifier = Modifier
+                .statusBarsPadding()
+                .fillMaxWidth()
+        ) {
+
+            TopButton(
+                imageVector = Icons.Default.ArrowBack,
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(16.dp)
+            ) {
+                //--navController.popBackStack()
+            }
+
+            TopButton(
+                imageVector = Icons.Default.BookmarkBorder,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(16.dp)
+            ) {
+
+            }
+
         }
 
-        itemsIndexed(Schedule.getMockList()) { position, data ->
-            ScheduleContent(data)
-        }
 
     }
-
 
 }
 
 
-
-
-
 @Composable
-fun ScheduleContent(schedule: Schedule) {
+private fun TopButton(
+    imageVector: ImageVector,
+    modifier: Modifier,
+    clickListener: () -> Unit
+) {
 
-    Column(
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+
+    Button(
+        onClick = { clickListener() },
+        border = BorderStroke(2.dp, Color(0xFFEAFBFF)),
+        shape = CircleShape,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color(0xDDF6F9FF),
+            contentColor = Color(0xFF3562D7)
+        ),
+        modifier = modifier.size(48.dp)
+
     ) {
 
-        Text(
-            text = schedule.title.uppercase(),
-            fontSize = 14.sp,
-            fontFamily = TripFontFamily,
-            fontWeight = FontWeight.ExtraBold,
-            letterSpacing = 0.75.sp
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            text = schedule.detail,
-            fontSize = 14.sp,
-            fontFamily = TripFontFamily,
-            fontWeight = FontWeight.Light,
-            lineHeight = 18.sp
-        )
-
+        Icon(imageVector = imageVector, contentDescription = "")
     }
-
 }
 
+@Preview
+@Composable
+private fun DetailHeaderPreview() {
+    DetailHeader()
+
+}
 
 
 @Preview
 @Composable
-private fun TripDetailPreview() {
-
-    TripDetailScreen()
+private fun TopButtonPreview() {
+    TopButton(
+        imageVector = Icons.Default.BookmarkBorder,
+        modifier = Modifier
+            //.align(Alignment.TopEnd)
+            .padding(16.dp)
+    ){}
 
 }

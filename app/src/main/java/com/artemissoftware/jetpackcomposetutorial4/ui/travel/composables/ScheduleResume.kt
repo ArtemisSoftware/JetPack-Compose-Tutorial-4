@@ -53,7 +53,9 @@ import com.google.accompanist.insets.navigationBarsPadding
 @Composable
 fun ScheduleResume(destination: Destination){
 
-    Column() {
+    Column(
+        modifier = Modifier.padding(16.dp)
+    ) {
 
         DestinationRating(destination = destination)
 
