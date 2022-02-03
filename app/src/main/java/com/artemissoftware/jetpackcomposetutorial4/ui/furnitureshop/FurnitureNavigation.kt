@@ -17,9 +17,9 @@ fun FurnitureNavigation() {
         composable(Screen.SplashScreen.route) {
             SplashScreen(navController = navController)
         }
-//        composable(Screen.DashboardScreen.route) {
-//            DashboardScreen()
-//        }
+        composable(Screen.DashboardScreen.route) {
+            DashboardScreen()
+        }
 //        composable(Screen.ProductListScreen.route) {
 //            ProductListScreen()
 //        }
