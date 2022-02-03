@@ -9,6 +9,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.artemissoftware.jetpackcomposetutorial4.ui.furnitureshop.FurnitureShopApp
 import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.InstagramProfileScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.NeoNavigationDestinations
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
                 //SplashScreen()
                 //TripDetailScreen()
 
-                NeoNavigationDestinations()
+                FurnitureShopApp()
             }
         }
     }

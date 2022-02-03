@@ -15,7 +15,7 @@ import com.artemissoftware.jetpackcomposetutorial4.R
 
 @Composable
 fun SplashScreen(
-//    navController: NavController
+    navController: NavController
 ) {
 //    val scale = remember {
 //        Animatable(0f)
@@ -38,6 +38,14 @@ fun SplashScreen(
 //        navController.navigate(Screen.DashboardScreen.route)
 //
 //    }
+
+    SplashContent()
+
+}
+
+
+@Composable
+fun SplashContent(){
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -51,9 +59,8 @@ fun SplashScreen(
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun DefaultPreview() {
-    SplashScreen()
+    SplashContent()
 }
