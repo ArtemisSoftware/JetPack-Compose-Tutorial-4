@@ -16,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.destinations.PostScreenDestination
 import com.ramcosta.composedestinations.DestinationsNavHost
 
 @RequiresApi(Build.VERSION_CODES.O)
