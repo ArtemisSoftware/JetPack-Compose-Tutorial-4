@@ -95,3 +95,10 @@ val TripFontFamily = FontFamily(
     Font(R.font.overpass_semi_bold, FontWeight.SemiBold),
     Font(R.font.overpass_thin, FontWeight.Thin),
 )
+
+
+val FurnitureFontFamily = FontFamily(
+    Font(R.font.dmsansregular, FontWeight.Normal),
+    Font(R.font.dmsansmedium, FontWeight.Medium),
+    Font(R.font.dmsansbold, FontWeight.Bold)
+)

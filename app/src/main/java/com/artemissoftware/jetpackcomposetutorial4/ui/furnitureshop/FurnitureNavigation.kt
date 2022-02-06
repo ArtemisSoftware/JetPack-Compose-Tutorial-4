@@ -18,15 +18,15 @@ fun FurnitureNavigation() {
             SplashScreen(navController = navController)
         }
         composable(Screen.DashboardScreen.route) {
-            DashboardScreen()
+            DashboardScreen(navController = navController)
         }
-//        composable(Screen.ProductListScreen.route) {
-//            ProductListScreen()
-//        }
-//
-//        composable(Screen.ProductDetailScreen.route) {
-//            ProductDetailsScreen()
-//        }
-//
+        composable(Screen.ProductListScreen.route) {
+            ProductListScreen()
+        }
+
+        composable(Screen.ProductDetailScreen.route) {
+            ProductDetailsScreen(navController = navController)
+        }
+
     }
 }

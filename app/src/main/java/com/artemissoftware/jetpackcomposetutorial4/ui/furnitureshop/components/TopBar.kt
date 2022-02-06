@@ -24,7 +24,7 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.theme.paledark
 fun TopBar(
     title: String,
     onBackClick: () -> Unit,
-    endIcon: ImageVector? = null
+    endIcon: ImageVector? = null,
 ) {
 
 

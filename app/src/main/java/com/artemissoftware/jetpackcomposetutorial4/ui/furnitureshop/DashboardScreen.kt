@@ -28,9 +28,10 @@ import androidx.navigation.NavController
 import com.artemissoftware.jetpackcomposetutorial4.R
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
 
-@Preview(showBackground = true)
 @Composable
-fun DashboardScreen() {
+fun DashboardScreen(
+    navController: NavController
+) {
     val itemList = listOf("Chairs", "Sofas", "Beds", "Tables")
 
     Surface(
@@ -42,9 +43,9 @@ fun DashboardScreen() {
             Spacer(modifier = Modifier.padding(5.dp))
             Header()
             Spacer(modifier = Modifier.padding(24.dp))
-            CategoryChairs(itemList)
+            CategoryChairs(itemList, navController)
             Spacer(modifier = Modifier.padding(24.dp))
-            CategoryBestOffers()
+            CategoryBestOffers(navController = navController)
             Spacer(modifier = Modifier.padding(24.dp))
             CategoryMore()
 
@@ -106,7 +107,10 @@ private fun Header() {
 
 
 @Composable
-private fun CategoryChairs(itemList: List<String>) {
+private fun CategoryChairs(
+    itemList: List<String>,
+    navController: NavController
+) {
     LazyRow(
         modifier = Modifier
             .fillMaxWidth()
@@ -151,7 +155,8 @@ private fun CategoryChairs(itemList: List<String>) {
                 imagePainter = painterResource(id = R.drawable.furniture_1),
                 title = "Matteo\n" +
                         "Armchair",
-                price = "$240"
+                price = "$240",
+                navController = navController
             )
         }
 
@@ -160,7 +165,8 @@ private fun CategoryChairs(itemList: List<String>) {
                 imagePainter = painterResource(id = R.drawable.furniture_2),
                 title = "Araceli\n" +
                         "Armchair",
-                price = "$240"
+                price = "$240",
+                navController = navController
             )
         }
 
@@ -169,7 +175,8 @@ private fun CategoryChairs(itemList: List<String>) {
                 imagePainter = painterResource(id = R.drawable.furniture_3),
                 title = "Primose\n" +
                         "Armchair",
-                price = "$240"
+                price = "$240",
+                navController = navController
             )
         }
 
@@ -181,12 +188,14 @@ private fun CategoryChairs(itemList: List<String>) {
 private fun ChairsItem(
     imagePainter: Painter,
     title: String = "",
-    price: String = ""
+    price: String = "",
+    navController: NavController
 ) {
     Card(
         modifier = Modifier
             .width(200.dp)
             .clickable {
+                navController.navigate(Screen.ProductDetailScreen.route)
             },
         elevation = 10.dp,
         shape = RoundedCornerShape(20.dp)
@@ -211,7 +220,9 @@ private fun ChairsItem(
 
 
 @Composable
-fun CategoryBestOffers() {
+fun CategoryBestOffers(
+    navController: NavController
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -245,7 +256,8 @@ fun CategoryBestOffers() {
             title = "Ingrit MV",
             subtitle = "Sofa",
             price = "$2689",
-            backgroundColor = lightBlue
+            backgroundColor = lightBlue,
+            navController = navController
         )
 
         CategoryBestOffersItems(
@@ -253,7 +265,8 @@ fun CategoryBestOffers() {
             title = "Montesque",
             subtitle = "Bed",
             price = "$1240",
-            backgroundColor = lightBlue
+            backgroundColor = lightBlue,
+            navController = navController
         )
 
         CategoryBestOffersItems(
@@ -261,7 +274,8 @@ fun CategoryBestOffers() {
             title = "Nolin Sofa",
             subtitle = "Sofa",
             price = "$240",
-            backgroundColor = lightBlue
+            backgroundColor = lightBlue,
+            navController = navController
         )
     }
 
@@ -276,6 +290,7 @@ private fun CategoryBestOffersItems(
     subtitle: String = "",
     price: String = "",
     backgroundColor: Color = Color.Transparent,
+    navController: NavController
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -284,6 +299,9 @@ private fun CategoryBestOffersItems(
             .fillMaxWidth()
             .wrapContentHeight()
             .padding(top = 24.dp)
+            .clickable {
+                navController.navigate(Screen.ProductListScreen.route)
+            }
     ) {
         Box(
             modifier = Modifier
