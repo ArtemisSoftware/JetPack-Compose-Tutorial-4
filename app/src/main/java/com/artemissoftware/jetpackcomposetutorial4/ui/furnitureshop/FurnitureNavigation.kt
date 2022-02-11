@@ -21,7 +21,7 @@ fun FurnitureNavigation() {
             DashboardScreen(navController = navController)
         }
         composable(Screen.ProductListScreen.route) {
-            ProductListScreen()
+            ProductListScreen(navController = navController)
         }
 
         composable(Screen.ProductDetailScreen.route) {

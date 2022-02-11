@@ -31,16 +31,17 @@ import com.artemissoftware.jetpackcomposetutorial4.R
 import com.artemissoftware.jetpackcomposetutorial4.ui.furnitureshop.components.TopBar
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
 
-@Preview(showBackground = true)
 @Composable
-fun ProductListScreen() {
+fun ProductListScreen(
+    navController: NavController
+) {
     Box(Modifier.verticalScroll(rememberScrollState())) {
 
         Column() {
             TopBar(
                 title = "Armchairs",
                 onBackClick = {
-
+                    navController.navigateUp()
                 },
                 endIcon = Icons.Default.ShoppingCart
             )
@@ -140,17 +141,17 @@ fun LeftSide() {
             .fillMaxSize()
             .padding(horizontal = 16.dp)
     ) {
-        LeftItem(
+        FurnituretItem(
             imagePainter = painterResource(id = R.drawable.furniture_4),
             title = "Matteo Armchair",
             price = "$240"
         )
-        LeftItem(
+        FurnituretItem(
             imagePainter = painterResource(id = R.drawable.furniture_5),
             title = "Primorse Accent",
             price = "$761"
         )
-        LeftItem(
+        FurnituretItem(
             imagePainter = painterResource(id = R.drawable.furniture_6),
             title = "Crandall 21",
             price = "$761"
@@ -268,4 +269,115 @@ fun RightItem(
             modifier = Modifier.aspectRatio(1f)
         )
     }
+}
+
+@Composable
+private fun FurnituretItem(
+    imagePainter: Painter,
+    title: String = "",
+    price: String = ""
+) {
+
+    Box {
+        Card(
+            modifier = Modifier
+                .size(150.dp),
+            elevation = 10.dp,
+            shape = RoundedCornerShape(20.dp)
+        ) {
+
+            Column(
+                modifier = Modifier
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.Bottom
+            ) {
+                Text(
+                    text = title,
+                    color = texttitlewhite,
+                    fontFamily = FurnitureFontFamily,
+                )
+                Text(
+                    text = price,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FurnitureFontFamily,
+                )
+            }
+
+        }
+        Box(
+            modifier = Modifier
+                .offset(
+                    x = 20.dp,
+                    y = (-260).dp
+                )
+                .height(120.dp)
+        ){
+            Image(
+                contentScale = ContentScale.Fit,
+                painter = imagePainter,
+                contentDescription = "",
+                modifier = Modifier.aspectRatio(1f)
+            )
+        }
+
+    }
+
+
+    Spacer(modifier = Modifier.height(60.dp))
+
+
+
+
+
+
+}
+
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultFurnituretItemPreview() {
+
+    Column {
+
+        FurnituretItem(
+            imagePainter = painterResource(id = R.drawable.furniture_4),
+            title = "Araceli Armchair",
+            price = "$240"
+        )
+        FurnituretItem(
+            imagePainter = painterResource(id = R.drawable.furniture_4),
+            title = "Araceli Armchair",
+            price = "$240"
+        )
+
+    }
+
+
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultLeftItemPreview() {
+
+    Column {
+
+
+        LeftSide()
+    }
+
+
+}
+
+
+@Preview(showBackground = true)
+@Composable
+private fun DefaultLeftItemPreview_2() {
+
+    Column {
+
+
+        RightSide()
+    }
+
+
 }
