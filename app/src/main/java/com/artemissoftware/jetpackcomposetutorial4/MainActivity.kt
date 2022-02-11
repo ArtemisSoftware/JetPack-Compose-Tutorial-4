@@ -14,6 +14,7 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.Instagram
 import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
 import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.NeoNavigationDestinations
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
+import com.artemissoftware.jetpackcomposetutorial4.ui.weather__.WeatherApp
 
 class MainActivity : ComponentActivity() {
 
@@ -34,7 +35,9 @@ class MainActivity : ComponentActivity() {
                 //SplashScreen()
                 //TripDetailScreen()
 
-                FurnitureShopApp()
+                //FurnitureShopApp()
+                WeatherApp()
+
             }
         }
     }
