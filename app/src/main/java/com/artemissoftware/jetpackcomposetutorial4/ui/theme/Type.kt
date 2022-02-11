@@ -102,3 +102,7 @@ val FurnitureFontFamily = FontFamily(
     Font(R.font.dmsansmedium, FontWeight.Medium),
     Font(R.font.dmsansbold, FontWeight.Bold)
 )
+
+
+val ReemKufi = FontFamily(Font(R.font.reemkufi))
+val Poppins = FontFamily(Font(R.font.poppins))
