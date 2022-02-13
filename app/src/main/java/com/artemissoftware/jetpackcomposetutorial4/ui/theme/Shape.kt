@@ -12,3 +12,4 @@ val Shapes = Shapes(
 
 val BottomShape = Shapes(medium = RoundedCornerShape(topStart = 60.dp, topEnd = 60.dp))
 val SearchShape = Shapes(medium = RoundedCornerShape(12.dp))
+val WeatherCardShape = Shapes(medium = RoundedCornerShape(16.dp))

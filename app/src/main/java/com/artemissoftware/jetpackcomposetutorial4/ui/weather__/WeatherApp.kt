@@ -10,8 +10,11 @@ import com.artemissoftware.jetpackcomposetutorial4.ui.theme.PrimaryBackground
 
 @Composable
 fun WeatherApp() {
-    Surface(color = PrimaryBackground, modifier = Modifier.fillMaxSize()) {
-        WeatherNavigation()
-    }
+        Surface(
+                color = PrimaryBackground
+        ) {
+                WeatherNavigation()
+        }
+
 
 }
