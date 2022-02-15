@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.weather__
+package com.artemissoftware.jetpackcomposetutorial4.ui.weather
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost

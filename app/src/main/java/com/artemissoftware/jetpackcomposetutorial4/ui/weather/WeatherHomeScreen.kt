@@ -1,4 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.weather__
+package com.artemissoftware.jetpackcomposetutorial4.ui.weather
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.artemissoftware.jetpackcomposetutorial4.R
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.*
-import com.artemissoftware.jetpackcomposetutorial4.ui.weather__.getTemperature
 
 @Composable
 fun WeatherHomeScreen() {

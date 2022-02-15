@@ -1,6 +1,4 @@
-package com.artemissoftware.jetpackcomposetutorial4.ui.weather__
-
-import com.artemissoftware.jetpackcomposetutorial4.ui.furnitureshop.Screen
+package com.artemissoftware.jetpackcomposetutorial4.ui.weather
 
 sealed class WeatherScreens(val route: String){
     object SplashScreen : WeatherScreens("splash_screen")

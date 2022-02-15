@@ -9,12 +9,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.artemissoftware.jetpackcomposetutorial4.ui.furnitureshop.FurnitureShopApp
-import com.artemissoftware.jetpackcomposetutorial4.ui.instagramprofile.InstagramProfileScreen
-import com.artemissoftware.jetpackcomposetutorial4.ui.library.LibraryScreen
-import com.artemissoftware.jetpackcomposetutorial4.ui.neonavigation.NeoNavigationDestinations
 import com.artemissoftware.jetpackcomposetutorial4.ui.theme.JetPackComposeTutorial4Theme
-import com.artemissoftware.jetpackcomposetutorial4.ui.weather__.WeatherApp
+import com.artemissoftware.jetpackcomposetutorial4.ui.weather.WeatherApp
 
 class MainActivity : ComponentActivity() {
 
